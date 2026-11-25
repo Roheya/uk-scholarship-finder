@@ -44,7 +44,15 @@ https://api.worqnow.ai/education/uk/scholarships?country=GM&limit=20
 | Results Limit | 20 |
 | Response Format | JSON |
 
-JavaScript's Fetch API sends requests to the endpoint and processes the returned scholarship data. A local JSON file is included as fallback data when the external API cannot be reached.
+JavaScript's Fetch API sends requests to the endpoint and processes the returned scholarship data. A local JSON file is included as fallback data when the external API request fails or returns an invalid response.
+
+### Local JSON Fallback
+
+The fallback file is located at:
+
+`data/scholarships.json`
+
+It contains locally stored scholarship information. When the API cannot provide valid data, the application attempts to load the locally stored information instead.
 
 ## 5. Technologies Used
 
@@ -115,7 +123,6 @@ Visit the corresponding address in your browser:
 - Port 8000: `http://localhost:8000`
 - Port 8001: `http://localhost:8001`
 
-
 ## 8. Deployment on Web01 and Web02
 
 The application was deployed on both provided web servers using NGINX.
@@ -129,6 +136,7 @@ The following steps were completed on each server:
 5. Created the `data` directory and copied `scholarships.json`.
 6. Set the required file permissions.
 7. Validated the NGINX configuration.
+8. Updated the deployed `script.js` with the latest application code.
 
 ### Deployment Verification
 
@@ -145,6 +153,14 @@ The `X-Served-By` response header confirmed the individual servers:
 
 - Web01: `7413-web-01`
 - Web02: `7413-web-02`
+
+The local JSON fallback file was also tested on both servers:
+
+```bash
+curl -I http://localhost/data/scholarships.json
+```
+
+Both returned `HTTP/1.1 200 OK`, confirming that NGINX could serve the scholarship JSON file.
 
 ## 9. Load Balancer Configuration
 
@@ -200,7 +216,7 @@ The following command was used to send six requests through HAProxy:
 
 ```bash
 for i in {1..6}; do
-  curl -skI https://localhost | grep -i X-Served-By
+    curl -skI https://localhost | grep -i X-Served-By
 done
 ```
 
@@ -210,7 +226,9 @@ The response headers alternated between Web01 and Web02, confirming successful r
 
 **Application URL:** [https://18.171.245.99](https://18.171.245.99)
 
-The application loaded successfully through the load balancer, and scholarship listings, search and filtering were tested.
+The load balancer was tested using its public IP address. HTTPS routing and backend request distribution were verified.
+
+The browser-level display of scholarship listings and the search and filtering functionality still require final verification on the deployed application.
 
 **SSL Certificate Note:** The existing SSL certificate was issued for `www.beroheyatouray.tech`, rather than the load balancer's public IP address. Therefore, accessing the application through its IP address produces a browser certificate-name mismatch warning. HTTPS routing was successfully tested.
 
@@ -219,9 +237,12 @@ The application loaded successfully through the load balancer, and scholarship l
 | Challenge | Solution |
 |---|---|
 | External API availability | Included local JSON fallback data. |
+| API request limits | Implemented fallback loading when API requests fail. |
 | Deployment on multiple servers | Deployed and tested the application independently on Web01 and Web02. |
+| Keeping deployed files updated | Copied the updated JavaScript file to both web servers. |
 | Load balancing verification | Used HAProxy tests and response headers to confirm traffic distribution. |
 | SSL certificate mismatch | Documented the mismatch between the existing certificate domain and the load balancer IP. |
+| Scholarship listings not displaying in the deployed browser | Verified that both servers could serve the JSON fallback file; further browser-side troubleshooting is required. |
 
 ## 12. API Attribution
 
@@ -232,6 +253,7 @@ ScholarFind uses the WorqNow Education API as its external source of scholarship
 - **Endpoint:** `https://api.worqnow.ai/education/uk/scholarships?country=GM&limit=20`
 
 **API Usage Limit:** The API allows up to 10 requests per day without an API key. Registering for a free API key increases the limit to 100 requests per day. Availability is subject to the provider's usage limits.
+
 ## 13. Project Repository
 
 The complete source code is available on GitHub:
@@ -246,4 +268,8 @@ The project also demonstrates practical infrastructure skills through deployment
 
 ### Git Contribution Note
 
+<<<<<<< HEAD
 Both contributor names displayed on this repository are mine. I used different Git identities during development, which is why GitHub displays them as two contributors. I completed this project independently.
+=======
+Both contributor names displayed on this repository are mine. I used different Git identities during development, which is why GitHub displays them as two contributors. I completed this project independently.
+>>>>>>> 52d4a01 (Update README and scholarship functionality)
