@@ -243,3 +243,7 @@ The complete source code is available on GitHub:
 ScholarFind demonstrates how an external REST API can be integrated into a web application to improve access to scholarship information for Gambian students.
 
 The project also demonstrates practical infrastructure skills through deployment on two NGINX web servers and the configuration and testing of HAProxy for load balancing.
+
+### Git Contribution Note
+
+Both contributor names displayed on this repository are mine. I used different Git identities during development, which is why GitHub displays them as two contributors. I completed this project independently.
