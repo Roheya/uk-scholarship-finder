@@ -1,0 +1,237 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f5f7fa;
+    color: #243447;
+    line-height: 1.6;
+}
+
+header{
+    background-color: #173b57;
+    padding: 18px 8%;
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo{
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+nav ul{
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+nav ul a{
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+nav ul a:hover{
+    color: #f4c95d;
+}
+
+.hero{
+    background-color: #173b57;
+    color: white;
+    padding: 90px 8%;
+    text-align: center;
+}
+.hero-content h1{
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+.hero-content p{
+    font-size: 18px;
+    margin-bottom: 25px;
+}
+.hero-button{
+    display: inline-block;
+    background-color: #f4c95d;
+    color: #173b57;
+    padding: 12px 25px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+}
+.hero-button:hover{
+    background-color: #e8b83f;
+}
+.search-section{
+    padding: 40px 8%;
+    text-align: center;
+}
+
+.search-section h2{
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+#search-form{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+#scholarship-search{
+    width: 60%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+}
+#search-form button{
+    background-color: #173b57;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+#search-form button:hover{
+    background-color: #245675;
+}
+.filter-section{
+    padding: 20px 8% 40px;
+    text-align: center;
+
+}
+.filter-section h2{
+    font-size: 26px;
+    margin-bottom: 20px;
+}
+
+#filter-form{
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+.filter-group{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    gap: 8px;
+}
+.filter-group select{
+    padding: 12px;
+    min-width: 200px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background-color: white;
+}
+
+#filter-form button{
+    padding: 12px 20px;
+    background-color: #173b57;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+#filter-form button:hover{
+    background-color: #245675;
+}
+.scholarship-section{
+    padding: 40px 8%;
+}
+.scholarship-section h2{
+    font-size: 28px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+#results-count{
+    text-align: center;
+    margin-bottom: 25px;
+    color: #64748b;
+}
+
+#scholarship-list{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.about-section{
+    background-color: #e8eef3;
+    padding: 50px 8%;
+    text-align: center;
+}
+.about-section h2{
+    font-size: 28px;
+    margin-bottom: 15px;
+
+}
+.about-section p{
+    max-width: 700px;
+    margin: 0 auto;
+}
+#search-form button{
+    width: 100%;
+}
+.scholarship-card {
+    background-color: white;
+    padding: 25px;
+    border-radius: 10px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+}
+
+.scholarship-card h3 {
+    color: #173b57;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.scholarship-card p {
+    margin-bottom: 10px;
+    color: #475569;
+    font-size: 15px;
+    line-height: 1.6;
+}
+footer{
+    background-color: #173b57;
+    color: white;
+    text-align: center;
+    padding: 25px 8%;
+}
+
+footer p{
+    margin: 5px 0;
+}
+@media (max-width: 600px){
+    nav{
+        flex-direction: column;
+        gap: 15px;
+    }
+    nav ul{
+        gap: 15px;
+    }
+    .hero-content h1{
+        font-size: 30px;
+    }
+    #search-form{
+        flex-direction: column;
+    }
+    #scholarship-search{
+        width: 100%;
+    }
+    #filter-form {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .filter-group select{
+        width: 100%;
+    }
+}
