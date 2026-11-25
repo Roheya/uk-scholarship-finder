@@ -217,6 +217,11 @@ The response headers alternated between Web01 and Web02, confirming successful r
 ### Application Access Through the Load Balancer
 
 **Application URL:** [https://18.171.245.99](https://18.171.245.99)
+The application can also be accessed directly through either web server using the following HTTP URLs:
+
+Web01: http://18.132.38.113
+
+Web02: http://3.10.140.1
 
 The load balancer was tested using its public IP address. HTTPS routing and backend request distribution were verified.
 
