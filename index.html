@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav aria-label="Main navigation">
+            <a href="index.html" class="logo">ScholarFind</a>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#scholarships">Explore Scholarships</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+        </nav>
+
+    </header>
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Find Scholarships for Your Future</h1>
+                <p>
+                    Discover Scholarship opportunities at universities across the United Kingdom.
+                </p>
+                <a href="#scholarships" class="hero-button">
+                    Explore Scholarships
+                </a>
+
+            </div>
+        </section>
+
+        <section class="search-section" aria-labelledby="search-heading">
+            <h2 id="search-heading">Find Your Scholarship</h2>
+            <form id="search-form">
+                <label for="scholarship-search">Search scholarships</label>
+                <input type="search" id="scholarship-search" name="search" placeholder="Enter scholarship or university name...">
+                <button type="submit">Search</button>
+            </form>
+
+        </section>
+        <section class="filter-section" aria-labelledby="filter-heading">
+            <h2 id="filter-heading">Filter Scholarships</h2>
+            <form id="filter-form">
+                <div class="filter-group">
+                    <label for="university-filter">University</label>
+                    <select id="university-filter" name= "university">
+                        <option value="">All Universities</option>
+                    </select>
+                    
+                </div>
+                <div class="filter-group">
+                    <label for="type-filter">Scholarship Type</label>
+                    <select name="type" id="type-filter">
+                        <option value="">All Types</option>
+                        <option value="merit">Merit</option>
+                        <option value="automatic">Automatic</option>
+                        <option value="country-specific">Country-specific</option>
+                        <option value="alumni">Alumni</option>
+                    </select>
+
+                </div>
+                <button type="reset">Clear Filters</button>
+            </form>
+
+        </section>
+        <section class="scholarship-section" id="scholarships">
+            <h2>Available Scholarships</h2>
+            <p id="results-count">Loading scholarships...</p>
+            <div id="scholarship-list"></div>
+
+        </section>
+        <section class="about-section" id="about">
+            <h2>About ScholarFind</h2>
+            <p>
+                ScholarFind helps students explore scholarship opportunities at universities across the United Kingdom.
+            </p>
+
+        </section>
+
+    </main>
+    <footer>
+        <p>&copy; 2026 ScholarFind. All rights reversed</p>
+        <p>Helping Gambian students discover educational opportunities.</p>
+
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>
