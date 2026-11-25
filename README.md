@@ -268,8 +268,6 @@ The project also demonstrates practical infrastructure skills through deployment
 
 ### Git Contribution Note
 
-<<<<<<< HEAD
+
 Both contributor names displayed on this repository are mine. I used different Git identities during development, which is why GitHub displays them as two contributors. I completed this project independently.
-=======
-Both contributor names displayed on this repository are mine. I used different Git identities during development, which is why GitHub displays them as two contributors. I completed this project independently.
->>>>>>> 52d4a01 (Update README and scholarship functionality)
+
