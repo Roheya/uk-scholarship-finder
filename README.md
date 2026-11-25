@@ -85,7 +85,7 @@ uk-scholarship-finder/
 ### Prerequisites
 
 - Git
-- Python 3 or Visual Studio Code with Live Server
+- Visual Studio Code with Live Server
 - A modern web browser
 
 ### Installation
@@ -101,27 +101,19 @@ git clone https://github.com/Roheya/uk-scholarship-finder.git
 ```bash
 cd uk-scholarship-finder
 ```
+3. Open the project in Visual Studio Code
 
-**3. Start a local development server**
+code .
 
-```bash
-python3 -m http.server 8000
-```
+4. Start the application
 
-If port 8000 is already in use, use port 8001 instead:
+Open index.html in Visual Studio Code.
 
-```bash
-python3 -m http.server 8001
-```
+Right-click inside the file.
 
-Alternatively, you can use the Live Server extension in Visual Studio Code.
+Select Open with Live Server.
 
-**4. Open the application**
-
-Visit the corresponding address in your browser:
-
-- Port 8000: `http://localhost:8000`
-- Port 8001: `http://localhost:8001`
+The application will open in your default web browser.
 
 ## 8. Deployment on Web01 and Web02
 
